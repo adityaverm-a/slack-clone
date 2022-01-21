@@ -2,7 +2,7 @@
 
 > A Slack Clone
 
-This is my version of Slack, a message application. It includes authentication, messageing, channels, etc. I used for firebase as the backend for this application, other than that i tried to customize the frontend of this application, I used material-ui for styling, real-time messaging, for a reponsive layout used RC-Drawers, etc.
+This is my version of Slack, a message application. It includes authentication, messageing, channels, etc. I used for firebase as the backend for this application, other than that i tried to customize the frontend of this application, I used Semantic-ui for styling, real-time messaging, for a reponsive layout used RC-Drawers, etc.
 
 ---
 
