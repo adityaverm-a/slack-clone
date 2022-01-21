@@ -43,3 +43,8 @@ npm run build
 - Alerts when someone is typing in one of the channels
 ![Screen Recording 2022-01-22 at 2 04 08 AM](https://user-images.githubusercontent.com/67803385/150597126-0fb24f40-664a-41ac-8cfd-f6b35087596c.gif)
 
+- Change Avatar
+![Screenshot 2022-01-22 at 2 16 05 AM](https://user-images.githubusercontent.com/67803385/150597889-c15e42d2-418a-48dc-957d-5ffa8bc8867b.png)
+
+- Emoji Picker, Loading Skelton and much more small features to give the users a better experience!
+![Screen Recording 2022-01-22 at 2 18 32 AM](https://user-images.githubusercontent.com/67803385/150598287-2a51bf12-5e18-4376-802e-58658a74bf60.gif)
