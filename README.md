@@ -1,4 +1,4 @@
-# Slack Clone
+# DevChat
 
 > A React Slack Clone
 
