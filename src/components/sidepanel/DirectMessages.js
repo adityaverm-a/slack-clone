@@ -5,7 +5,7 @@ import { Icon, Menu } from 'semantic-ui-react';
 import firebase from '../../firebase';
 import { setCurrentChannel, setPrivateChannel } from '../../actions/channel';
 
-const DirectMessages = ({ currentUser, isPrivateChannel}) => {
+const DirectMessages = ({ currentUser, isPrivateChannel, isDrawerOpen, closeDrawer}) => {
     const [userRef] = useState(firebase.database().ref('users'))
     const [connectedRef] = useState(firebase.database().ref('.info/connected'))
     const [presenceRef] = useState(firebase.database().ref('presence'))
@@ -92,6 +92,10 @@ const DirectMessages = ({ currentUser, isPrivateChannel}) => {
         dispatch(setCurrentChannel(channelData));
         dispatch(setPrivateChannel(true));
         setChannelAsActive(user.uid);
+
+        if(isDrawerOpen){
+            closeDrawer()
+        }
     }
 
     const getChannelId = (userId) => {

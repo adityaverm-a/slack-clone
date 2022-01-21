@@ -101,6 +101,7 @@ const MessagesComp = ({ isPrivateChannel, currentChannel, currentUser }) => {
         loading ? (
             <Fragment>
                 {[...Array(9)].map((_, i) => <Skeleton key={i} />)}
+                <h6>Start a conversation, we'll fetch the existing messages, if there are any!</h6>
             </Fragment>
         ) : null
     )
@@ -284,7 +285,7 @@ const MessagesComp = ({ isPrivateChannel, currentChannel, currentUser }) => {
 
 
     return (
-        <Fragment>
+        <div className='message__container'>
             <MessagesHeader
                 channelName={displayChannelName(channel)} 
                 numUniqueUsers={getUniqueUsers(messages)}
@@ -309,7 +310,7 @@ const MessagesComp = ({ isPrivateChannel, currentChannel, currentUser }) => {
                 privateChannel={isPrivateChannel}
                 isProgressBarVisble={isProgressBarVisble}
             />
-        </Fragment>
+        </div>
     )
 }
 

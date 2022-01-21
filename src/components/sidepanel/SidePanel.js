@@ -5,23 +5,55 @@ import UserPanel from './UserPanel';
 import Channels from './Channels';
 import DirectMessages from './DirectMessages';
 import Starred from './Starred';
+import { useEffect } from 'react';
+import MobileSideBar from '../MobileSideBar';
 
 const SidePanel = ({ currentUser, isPrivateChannel }) => {
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
-    return (
+    const closeDrawer = () => {
+        setIsDrawerOpen(false)
+    }
+
+    const sideBar = (
         <Menu
             inverted
             size="large"
             color="black"
             fixed="left"
             vertical
-            style={{ background: '#4c3c4c', fontSize: '1.2rem' }}
+            style={{ background: '#4c3c4c', fontSize: '1.2rem' }} 
         >
             <UserPanel currentUser={currentUser} />
             <Starred currentUser={currentUser} />
-            <Channels currentUser={currentUser} />
-            <DirectMessages currentUser={currentUser} isPrivateChannel={isPrivateChannel} />
+            <Channels 
+                currentUser={currentUser}
+                closeDrawer={closeDrawer}
+                isDrawerOpen={isDrawerOpen}
+            />
+            <DirectMessages 
+                currentUser={currentUser} 
+                isPrivateChannel={isPrivateChannel} 
+                closeDrawer={closeDrawer}
+                isDrawerOpen={isDrawerOpen}
+            />
         </Menu>
+    )
+
+
+    return (
+        <>
+            <div className='sidePanel'>
+                {sideBar}
+            </div>
+            <MobileSideBar
+                isDrawerOpen={isDrawerOpen}
+                setIsDrawerOpen={setIsDrawerOpen}
+            >
+                {sideBar}
+            </MobileSideBar>
+        </>
+            
     )
 }
 
@@ -31,4 +63,3 @@ SidePanel.propTypes = {
 }
 
 export default SidePanel;
-

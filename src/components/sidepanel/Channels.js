@@ -17,7 +17,8 @@ class Channels extends Component {
         notifications: [],
         firstLoad: true,
         modal: false,
-        user: this.props.currentUser
+        user: this.props.currentUser,
+        isDrawerOpen: this.props.isDrawerOpen 
     }
 
     componentDidMount() {
@@ -127,6 +128,10 @@ class Channels extends Component {
         this.props.setCurrentChannel(channel);
         this.props.setPrivateChannel(false);
         this.setState({ channel });
+
+        if(this.state.isDrawerOpen){
+            this.props.closeDrawer()
+        }
     }
 
     clearNotifications = () => {
@@ -184,7 +189,12 @@ class Channels extends Component {
         }
     }
 
-    openModal = () => this.setState({ modal: true });
+    openModal = () => {
+        this.setState({ modal: true })
+        if(this.state.isDrawerOpen){
+            this.props.closeDrawer()
+        }
+    };
     closeModal = () => this.setState({ modal: false });
 
     render() {

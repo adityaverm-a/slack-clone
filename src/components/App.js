@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Grid } from 'semantic-ui-react';
 // import ColorPanel from './colorpanel/ColorPanel';
+import MobileSideBar from './MobileSideBar';
 import SidePanel from './sidepanel/SidePanel';
 import Messages from './messages/Messages';
 import MetaPanel from './metapanel/MetaPanel';
@@ -14,7 +15,7 @@ const App = () => {
     isPrivateChannel: channel.isPrivateChannel,
     currentChannel: channel.currentChannel,
     currentUser: auth.currentUser,
-    userPosts: channel.userPosts
+    userPosts: channel.userPosts,
   }))
 
   return (
@@ -28,7 +29,7 @@ const App = () => {
         isPrivateChannel={isPrivateChannel} 
         currentUser={currentUser} 
       />
-      <Grid.Column style={{ marginLeft: 300 }}>
+      <Grid.Column>
         <Messages 
           key={ currentChannel && currentChannel.id } 
           isPrivateChannel={isPrivateChannel}
@@ -36,7 +37,7 @@ const App = () => {
           currentUser={currentUser}
         />
       </Grid.Column>
-      <Grid.Column width={4} style={{ marginRight: 40 }}>
+      <Grid.Column width={4} style={{ marginRight: 40 }} only='large screen'>
         <MetaPanel
           key={ currentChannel && currentChannel.details } 
           isPrivateChannel={isPrivateChannel}

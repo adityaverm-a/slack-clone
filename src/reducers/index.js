@@ -4,5 +4,5 @@ import channel from './channel';
 
 export default combineReducers({
     auth,
-    channel
+    channel,
 });
