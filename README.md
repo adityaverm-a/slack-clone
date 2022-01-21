@@ -35,6 +35,11 @@ npm install
 ### Build for production
 
 ```bash
-cd client
 npm run build
 ```
+
+## Features
+
+- Alerts when someone is typing in one of the channels
+![Screen Recording 2022-01-22 at 2 04 08 AM](https://user-images.githubusercontent.com/67803385/150597126-0fb24f40-664a-41ac-8cfd-f6b35087596c.gif)
+
